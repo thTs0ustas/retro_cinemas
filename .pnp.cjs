@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@emotion/react", "virtual:ac2200d2b9caa9fb6f63146c750b3e4e4f105813247b21a18ec63f684359a14adc69a1d469611160480058dca4f6de8286e7c0a6856b8458681ccd95c857921d#npm:11.9.3"],\
             ["@emotion/styled", "virtual:ac2200d2b9caa9fb6f63146c750b3e4e4f105813247b21a18ec63f684359a14adc69a1d469611160480058dca4f6de8286e7c0a6856b8458681ccd95c857921d#npm:11.9.3"],\
+            ["@mui/icons-material", "virtual:ac2200d2b9caa9fb6f63146c750b3e4e4f105813247b21a18ec63f684359a14adc69a1d469611160480058dca4f6de8286e7c0a6856b8458681ccd95c857921d#npm:5.8.4"],\
             ["@mui/material", "virtual:ac2200d2b9caa9fb6f63146c750b3e4e4f105813247b21a18ec63f684359a14adc69a1d469611160480058dca4f6de8286e7c0a6856b8458681ccd95c857921d#npm:5.9.1"],\
             ["chart.js", "npm:3.8.0"],\
             ["eslint", "npm:8.20.0"],\
@@ -423,6 +424,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/react-dom",\
             "@types/react",\
             "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@mui/icons-material", [\
+        ["npm:5.8.4", {\
+          "packageLocation": "./.yarn/cache/@mui-icons-material-npm-5.8.4-b383842cf5-1df0ffb086.zip/node_modules/@mui/icons-material/",\
+          "packageDependencies": [\
+            ["@mui/icons-material", "npm:5.8.4"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:ac2200d2b9caa9fb6f63146c750b3e4e4f105813247b21a18ec63f684359a14adc69a1d469611160480058dca4f6de8286e7c0a6856b8458681ccd95c857921d#npm:5.8.4", {\
+          "packageLocation": "./.yarn/__virtual__/@mui-icons-material-virtual-395294d476/0/cache/@mui-icons-material-npm-5.8.4-b383842cf5-1df0ffb086.zip/node_modules/@mui/icons-material/",\
+          "packageDependencies": [\
+            ["@mui/icons-material", "virtual:ac2200d2b9caa9fb6f63146c750b3e4e4f105813247b21a18ec63f684359a14adc69a1d469611160480058dca4f6de8286e7c0a6856b8458681ccd95c857921d#npm:5.8.4"],\
+            ["@babel/runtime", "npm:7.18.9"],\
+            ["@mui/material", "virtual:ac2200d2b9caa9fb6f63146c750b3e4e4f105813247b21a18ec63f684359a14adc69a1d469611160480058dca4f6de8286e7c0a6856b8458681ccd95c857921d#npm:5.9.1"],\
+            ["@types/mui__material", null],\
+            ["@types/react", null],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@mui/material",\
+            "@types/mui__material",\
+            "@types/react",\
             "react"\
           ],\
           "linkType": "HARD"\
@@ -3531,6 +3559,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["retro_cinemas", "workspace:."],\
             ["@emotion/react", "virtual:ac2200d2b9caa9fb6f63146c750b3e4e4f105813247b21a18ec63f684359a14adc69a1d469611160480058dca4f6de8286e7c0a6856b8458681ccd95c857921d#npm:11.9.3"],\
             ["@emotion/styled", "virtual:ac2200d2b9caa9fb6f63146c750b3e4e4f105813247b21a18ec63f684359a14adc69a1d469611160480058dca4f6de8286e7c0a6856b8458681ccd95c857921d#npm:11.9.3"],\
+            ["@mui/icons-material", "virtual:ac2200d2b9caa9fb6f63146c750b3e4e4f105813247b21a18ec63f684359a14adc69a1d469611160480058dca4f6de8286e7c0a6856b8458681ccd95c857921d#npm:5.8.4"],\
             ["@mui/material", "virtual:ac2200d2b9caa9fb6f63146c750b3e4e4f105813247b21a18ec63f684359a14adc69a1d469611160480058dca4f6de8286e7c0a6856b8458681ccd95c857921d#npm:5.9.1"],\
             ["chart.js", "npm:3.8.0"],\
             ["eslint", "npm:8.20.0"],\

@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import Head from 'next/head';
+import { Navigation } from '../components/navigation';
 import { TopHeaderBar } from '../components/topHeaderBar';
 
 function Home() {
@@ -13,6 +14,7 @@ function Home() {
 
       <Box>
         <TopHeaderBar />
+        <Navigation />
       </Box>
     </div>
   );
