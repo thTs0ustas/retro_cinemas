@@ -4,10 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/.yarn
+/.vscoce/
 # testing
 /coverage
-
 # next.js
 /.next/
 /out/
@@ -30,3 +30,4 @@ yarn-error.log*
 
 # vercel
 .vercel
+.yarn/install-state.gz
