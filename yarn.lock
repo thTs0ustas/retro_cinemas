@@ -927,6 +927,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chart.js@npm:^3.8.0":
+  version: 3.8.0
+  resolution: "chart.js@npm:3.8.0"
+  checksum: 0360212bf5d534effc8475a1aa705ba7257a315af368b5e8eecf476f0bd57a6bb80ad740e870d552f2d11e134dd1497ccef02950d7e626c21a400ff00ecf59af
+  languageName: node
+  linkType: hard
+
 "clsx@npm:^1.2.1":
   version: 1.2.1
   resolution: "clsx@npm:1.2.1"
@@ -1034,7 +1041,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^2.6.9":
+"debug@npm:^2.2.0, debug@npm:^2.6.9":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
   dependencies:
@@ -1597,6 +1604,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"flux-standard-action@npm:^0.6.0":
+  version: 0.6.1
+  resolution: "flux-standard-action@npm:0.6.1"
+  dependencies:
+    lodash.isplainobject: ^3.2.0
+  checksum: 0da4a47182438e6fd7d56396c6a8cc53af6aa33816ea33e9473ca2c1088e61973578c4bf5e56604cf4f79c4d5f9e720c1ce3973376c6a14aa9a15c60d24aab96
+  languageName: node
+  linkType: hard
+
 "fs.realpath@npm:^1.0.0":
   version: 1.0.0
   resolution: "fs.realpath@npm:1.0.0"
@@ -1840,6 +1856,15 @@ __metadata:
     has: ^1.0.3
     side-channel: ^1.0.4
   checksum: 1944f92e981e47aebc98a88ff0db579fd90543d937806104d0b96557b10c1f170c51fb777b97740a8b6ddeec585fca8c39ae99fd08a8e058dfc8ab70937238bf
+  languageName: node
+  linkType: hard
+
+"invariant@npm:^2.1.1":
+  version: 2.2.4
+  resolution: "invariant@npm:2.2.4"
+  dependencies:
+    loose-envify: ^1.0.0
+  checksum: cc3182d793aad82a8d1f0af697b462939cb46066ec48bbf1707c150ad5fad6406137e91a262022c269702e01621f35ef60269f6c0d7fd178487959809acdfb14
   languageName: node
   linkType: hard
 
@@ -2089,10 +2114,59 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash._basefor@npm:^3.0.0":
+  version: 3.0.3
+  resolution: "lodash._basefor@npm:3.0.3"
+  checksum: 8028af9901a33c336eeb18945bfe304f9e2abc1a741f688a5e26e3fa1a1c975688f7a40ec90d8dc3eda3c04160ede0aa5a89c2beb04ac29daf914b5aeb8b6b5a
+  languageName: node
+  linkType: hard
+
+"lodash.isarguments@npm:^3.0.0":
+  version: 3.1.0
+  resolution: "lodash.isarguments@npm:3.1.0"
+  checksum: ae1526f3eb5c61c77944b101b1f655f846ecbedcb9e6b073526eba6890dc0f13f09f72e11ffbf6540b602caee319af9ac363d6cdd6be41f4ee453436f04f13b5
+  languageName: node
+  linkType: hard
+
+"lodash.isarray@npm:^3.0.0":
+  version: 3.0.4
+  resolution: "lodash.isarray@npm:3.0.4"
+  checksum: 3b298fb76ff16981353f7d0695d8680be9451b74d2e76714ddbd903a90fbaa8e1d84979d0ae99325f5a9033776771154b19e05027ab23de83202251c8abe81b5
+  languageName: node
+  linkType: hard
+
+"lodash.isplainobject@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "lodash.isplainobject@npm:3.2.0"
+  dependencies:
+    lodash._basefor: ^3.0.0
+    lodash.isarguments: ^3.0.0
+    lodash.keysin: ^3.0.0
+  checksum: c49ee7642dea4427aeae37ad987fb43b574e15322c0cd5c8e9d6097099394dd68783948da646291e25471b7faa917ce8e18435403a6da89b1652520ea735d9c5
+  languageName: node
+  linkType: hard
+
+"lodash.keysin@npm:^3.0.0":
+  version: 3.0.8
+  resolution: "lodash.keysin@npm:3.0.8"
+  dependencies:
+    lodash.isarguments: ^3.0.0
+    lodash.isarray: ^3.0.0
+  checksum: 7d748df105266a474b6b3b17bef339f16c8625fb3091e3c6cad4a02ad943617c3fd5cb9036fed0dbd4a38e6d02e1f6d4a8cc5399f075d411f2a8f21b2eb8a8e4
+  languageName: node
+  linkType: hard
+
 "lodash.merge@npm:^4.6.2":
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
   checksum: ad580b4bdbb7ca1f7abf7e1bce63a9a0b98e370cf40194b03380a46b4ed799c9573029599caebc1b14e3f24b111aef72b96674a56cfa105e0f5ac70546cdc005
+  languageName: node
+  linkType: hard
+
+"lodash@npm:^3.10.1":
+  version: 3.10.1
+  resolution: "lodash@npm:3.10.1"
+  checksum: 53065d3712a2fd90b55690c5af19f9625a5bbb2b7876ff76d782ee1dc22618fd4dff191d44a8e165a17b5b81a851c3e884d3b5b25e314422fbe24bb299542685
   languageName: node
   linkType: hard
 
@@ -2103,7 +2177,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
+"loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
   dependencies:
@@ -2597,6 +2671,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"redux-observable@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "redux-observable@npm:2.0.0"
+  dependencies:
+    rxjs: ^7.0.0
+    tslib: ~2.1.0
+  peerDependencies:
+    redux: ">=4 <5"
+  checksum: ad5c23019e662541339d5dadb8cb9418d4c29499b52c8557a2a2fb0c3384af0fe3640db124176712d2e60c997bd12c418291ff7d668f01a14d2c553dd191ddd6
+  languageName: node
+  linkType: hard
+
+"redux-toolkit@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "redux-toolkit@npm:1.1.2"
+  dependencies:
+    debug: ^2.2.0
+    flux-standard-action: ^0.6.0
+    invariant: ^2.1.1
+    lodash: ^3.10.1
+  checksum: 28d14a820af895db3af8b4da8c54350780354195e9266e236d150fc2e338957ffba4fb02bd50bfb4e0d4ac463137fe88ddd6238c9fd1a7daf6c81ac6548f99d2
+  languageName: node
+  linkType: hard
+
 "redux@npm:^4.2.0":
   version: 4.2.0
   resolution: "redux@npm:4.2.0"
@@ -2697,6 +2795,7 @@ __metadata:
     "@emotion/react": ^11.9.3
     "@emotion/styled": ^11.9.3
     "@mui/material": ^5.9.1
+    chart.js: ^3.8.0
     eslint: 8.20.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-next: 12.2.3
@@ -2709,6 +2808,9 @@ __metadata:
     react-dom: 18.2.0
     react-redux: ^8.0.2
     redux: ^4.2.0
+    redux-observable: ^2.0.0
+    redux-toolkit: ^1.1.2
+    rxjs: ^7.5.6
   languageName: unknown
   linkType: soft
 
@@ -2736,6 +2838,15 @@ __metadata:
   dependencies:
     queue-microtask: ^1.2.2
   checksum: cb4f97ad25a75ebc11a8ef4e33bb962f8af8516bb2001082ceabd8902e15b98f4b84b4f8a9b222e5d57fc3bd1379c483886ed4619367a7680dad65316993021d
+  languageName: node
+  linkType: hard
+
+"rxjs@npm:^7.0.0, rxjs@npm:^7.5.6":
+  version: 7.5.6
+  resolution: "rxjs@npm:7.5.6"
+  dependencies:
+    tslib: ^2.1.0
+  checksum: fc05f01364a74dac57490fb3e07ea63b422af04017fae1db641a009073f902ef69f285c5daac31359620dc8d9aee7d81e42b370ca2a8573d1feae0b04329383b
   languageName: node
   linkType: hard
 
@@ -2972,10 +3083,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.4.0":
+"tslib@npm:^2.1.0, tslib@npm:^2.4.0":
   version: 2.4.0
   resolution: "tslib@npm:2.4.0"
   checksum: 8c4aa6a3c5a754bf76aefc38026134180c053b7bd2f81338cb5e5ebf96fefa0f417bff221592bf801077f5bf990562f6264fecbc42cd3309b33872cb6fc3b113
+  languageName: node
+  linkType: hard
+
+"tslib@npm:~2.1.0":
+  version: 2.1.0
+  resolution: "tslib@npm:2.1.0"
+  checksum: aa189c8179de0427b0906da30926fd53c59d96ec239dff87d6e6bc831f608df0cbd6f77c61dabc074408bd0aa0b9ae4ec35cb2c15f729e32f37274db5730cb78
   languageName: node
   linkType: hard
 

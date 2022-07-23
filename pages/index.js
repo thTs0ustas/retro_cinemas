@@ -1,14 +1,20 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { Box } from '@mui/material';
+import Head from 'next/head';
+import { TopHeaderBar } from '../components/topHeaderBar';
 
-export default function Home() {
+function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Retro Cinemas</title>
-        <meta name="description" content="A cinema for retro people!" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='description' content='A cinema for retro people!' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
+
+      <Box>
+        <TopHeaderBar />
+      </Box>
     </div>
-  )
+  );
 }
+export default Home;
