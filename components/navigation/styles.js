@@ -9,13 +9,13 @@ export default {
       xs: '#6e0b24',
       lg: 'linear-gradient(to top, rgba(92, 10, 34,0.3) 0%,  #000 100%)',
     },
-    zIndex: 1,
     boxShadow: 'none',
   }),
   iconButton: {
     mr: 2,
+    borderRadius: 200,
     '&:hover': {
-      backgroundColor: 'transparent',
+      bgcolor: 'transparent',
     },
   },
   toolbar: {
