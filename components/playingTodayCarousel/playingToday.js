@@ -1,19 +1,93 @@
-import { Box, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import MobileStepper from '@mui/material/MobileStepper';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import SwipeableViews from 'react-swipeable-views';
+import { autoPlay } from 'react-swipeable-views-utils';
+import { useState } from 'react';
+import { chunk } from 'lodash';
 import styles from './styles';
 
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+const cards = chunk(Array(9).fill(null), 3);
+
 function PlayingTodayCarousel() {
+  const theme = useTheme();
+  const [activeStep, setActiveStep] = useState(0);
+  const maxSteps = cards.length;
+
+  const handleNext = () => {
+    setActiveStep(prevActiveStep => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep(prevActiveStep => prevActiveStep - 1);
+  };
+
+  const handleStepChange = step => {
+    setActiveStep(step);
+  };
+
   return (
     <Box sx={styles.container}>
-      <Box>
+      <Paper
+        variant='outlined'
+        square
+        sx={{ width: '100%', textAlign: 'center' }}>
         <Typography variant='h2'>Playing Today</Typography>
-      </Box>
+      </Paper>
       <Box sx={styles.carousel}>
-        <Box sx={styles.card} />
-        <Box sx={styles.card} />
-        <Box sx={styles.card} />
-        <Box sx={styles.card} />
-        <Box sx={styles.card} />
-        <Box sx={styles.card} />
+        <AutoPlaySwipeableViews
+          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+          index={activeStep}
+          onChangeIndex={handleStepChange}
+          enableMouseEvents>
+          {cards.map((step, index) => (
+            <Box
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              sx={{ display: 'flex', justifyContent: 'space-around' }}>
+              {Math.abs(activeStep - index) <= 2
+                ? step.map((/* card */) => <Box sx={styles.card} />)
+                : null}
+            </Box>
+          ))}
+        </AutoPlaySwipeableViews>
+        <MobileStepper
+          steps={maxSteps}
+          position='static'
+          activeStep={activeStep}
+          nextButton={
+            <Button
+              size='small'
+              onClick={handleNext}
+              disabled={activeStep === maxSteps - 1}>
+              Next
+              {theme.direction === 'rtl' ? (
+                <KeyboardArrowLeft />
+              ) : (
+                <KeyboardArrowRight />
+              )}
+            </Button>
+          }
+          backButton={
+            <Button
+              size='small'
+              onClick={handleBack}
+              disabled={activeStep === 0}>
+              {theme.direction === 'rtl' ? (
+                <KeyboardArrowRight />
+              ) : (
+                <KeyboardArrowLeft />
+              )}
+              Back
+            </Button>
+          }
+        />
       </Box>
     </Box>
   );
