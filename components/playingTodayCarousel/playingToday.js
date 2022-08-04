@@ -27,8 +27,18 @@ function PlayingTodayCarousel() {
       <Paper
         variant='outlined'
         square
-        sx={{ width: '100%', textAlign: 'center' }}>
-        <Typography variant='h2'>Playing Today</Typography>
+        sx={{
+          width: '100%',
+          textAlign: 'center',
+          bgcolor: '#6e0b24',
+          border: 'none',
+        }}>
+        <Typography sx={styles.title} variant='h2'>
+          Films showing today
+        </Typography>
+        <Typography sx={styles.desc} variant='body1'>
+          See all films & session times
+        </Typography>
       </Paper>
       <Box sx={styles.carousel}>
         <AutoPlaySwipeableViews

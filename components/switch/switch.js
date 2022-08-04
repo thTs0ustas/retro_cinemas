@@ -1,10 +1,12 @@
 import FormControlLabel from '@mui/material/FormControlLabel';
 import MaterialUISwitch from './switchStyles';
 
-const Switch = () => (
-  <FormControlLabel
-    control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-  />
-);
+function Switch() {
+  return (
+    <FormControlLabel
+      control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked={false} />}
+    />
+  );
+}
 
 export default Switch;

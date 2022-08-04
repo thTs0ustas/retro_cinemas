@@ -5,6 +5,7 @@ export default {
     left: 0,
     color: palette.primary.main,
     zIndex: 2,
+    borderBottom: { xs: `2px solid #a99664`, lg: 'none' },
     background: {
       xs: '#6e0b24',
       lg: 'linear-gradient(to top, rgba(92, 10, 34,0.3) 0%,  #000 100%)',
@@ -53,13 +54,6 @@ export default {
     },
   },
   image: {
-    position: 'relative',
-
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-
     '&::before': {
       zIndex: 1,
       opacity: 0.3,
@@ -69,8 +63,8 @@ export default {
       bgcolor: '#6e0b24',
       position: 'absolute',
       top: {
-        xs: 0,
-        lg: 64,
+        xs: '64px',
+        lg: '64px',
       },
       left: 0,
       right: 0,

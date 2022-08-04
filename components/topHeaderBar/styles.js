@@ -22,7 +22,7 @@ export default {
       backgroundColor: '#000',
     },
   },
-  buttonSignup: ({ palette }) => ({
+  buttonSignup: () => ({
     borderRadius: '0',
     height: '40px',
     width: '120px',
