@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
 import Head from 'next/head';
 import { Navigation } from '../components/navigation';
+import { PlayingTodayCarousel } from '../components/playingTodayCarousel';
 import { TopHeaderBar } from '../components/topHeaderBar';
 
 function Home() {
@@ -16,6 +17,7 @@ function Home() {
         <TopHeaderBar />
         <Navigation />
       </Box>
+      <PlayingTodayCarousel />
     </div>
   );
 }
