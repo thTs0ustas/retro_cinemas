@@ -1,37 +1,27 @@
-import { useTheme } from '@mui/material/styles';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import MobileStepper from '@mui/material/MobileStepper';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import { useState } from 'react';
-import { chunk } from 'lodash';
 import styles from './styles';
+import usePlayingToday from './usePlayingToday';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-const cards = chunk(Array(9).fill(null), 3);
 
 function PlayingTodayCarousel() {
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = useState(0);
-  const maxSteps = cards.length;
-
-  const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep(prevActiveStep => prevActiveStep - 1);
-  };
-
-  const handleStepChange = step => {
-    setActiveStep(step);
-  };
-
+  const {
+    cards,
+    theme,
+    activeStep,
+    maxSteps,
+    handleNext,
+    handleBack,
+    handleStepChange,
+  } = usePlayingToday();
   return (
     <Box sx={styles.container}>
       <Paper
@@ -52,7 +42,8 @@ function PlayingTodayCarousel() {
               key={index}
               sx={{ display: 'flex', justifyContent: 'space-around' }}>
               {Math.abs(activeStep - index) <= 2
-                ? step.map((/* card */) => <Box sx={styles.card} />)
+                ? // eslint-disable-next-line react/no-array-index-key
+                  step.map((_, indx) => <Box key={indx} sx={styles.card} />)
                 : null}
             </Box>
           ))}
