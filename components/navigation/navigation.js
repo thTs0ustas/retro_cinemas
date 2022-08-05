@@ -5,19 +5,13 @@ import MuiLink from '@mui/material/Link';
 import Toolbar from '@mui/material/Toolbar';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { useState } from 'react';
 import styles from './styles';
 import { NavMenu } from './navMenu';
 
 function Navigation() {
-  // const [navbarOpen, setNavbarOpen] = useState(false);
-  // const handleToggle = () => {
-  //   setNavbarOpen(!navbarOpen);
-  // };
-
   return (
     <Box sx={{ flexGrow: 1, position: 'relative' }}>
-      <AppBar sx={styles.appBar}>
+      <AppBar sx={styles.appBar} position='static'>
         <Toolbar sx={styles.toolbar}>
           <IconButton
             size='large'

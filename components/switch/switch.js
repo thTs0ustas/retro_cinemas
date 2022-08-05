@@ -5,6 +5,7 @@ function Switch() {
   return (
     <FormControlLabel
       control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked={false} />}
+      label=''
     />
   );
 }
