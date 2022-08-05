@@ -5,7 +5,7 @@ export default {
     justifyContent: 'center',
     alignItems: 'center',
     gap: '1rem',
-    fontSize: '1.7rem',
+    fontSize: { xs: '1rem', md: '1.5rem', lg: '1.7rem' },
     color: '#ffebc6',
     fontWeight: 300,
     textTransform: 'uppercase',
@@ -24,7 +24,12 @@ export default {
       backgroundColor: '#ffebc6',
     },
   },
-
+  paper: {
+    width: '100%',
+    textAlign: 'center',
+    bgcolor: '#6e0b24',
+    border: 'none',
+  },
   desc: {
     color: '#b09661',
   },
@@ -37,12 +42,25 @@ export default {
     alignItems: 'center',
   },
   carousel: {
+    mt: 2,
     width: '100%',
-    bgcolor: '#2f2f2f',
+    bgcolor: '#6e0b24',
+    padding: { xs: '0 10px' },
   },
   card: {
-    width: { xs: '100%', sm: '50vw', md: '35vw', lg: '25vw' },
-    height: { xs: '55vw', sm: '45vw', md: '25vw', lg: '15vw' },
+    width: { xs: '100%', sm: '35vw', md: '35vw', lg: '25vw' },
+    height: { xs: '55vw', sm: '25vw', md: '25vw', lg: '15vw' },
     bgcolor: '#2f6f2f',
+  },
+  stepper: {
+    justifyContent: 'center',
+    gap: 2,
+    bgcolor: '#6e0b24',
+    '& .MuiMobileStepper-dotActive': {
+      bgcolor: '#b09661',
+    },
+  },
+  buttons: {
+    color: '#b09661',
   },
 };

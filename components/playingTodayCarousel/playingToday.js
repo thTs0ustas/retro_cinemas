@@ -24,15 +24,7 @@ function PlayingTodayCarousel() {
   } = usePlayingToday();
   return (
     <Box sx={styles.container}>
-      <Paper
-        variant='outlined'
-        square
-        sx={{
-          width: '100%',
-          textAlign: 'center',
-          bgcolor: '#6e0b24',
-          border: 'none',
-        }}>
+      <Paper variant='outlined' square sx={styles.paper}>
         <Typography sx={styles.title} variant='h2'>
           Films showing today
         </Typography>
@@ -59,11 +51,13 @@ function PlayingTodayCarousel() {
           ))}
         </AutoPlaySwipeableViews>
         <MobileStepper
+          sx={styles.stepper}
           steps={maxSteps}
           position='static'
           activeStep={activeStep}
           nextButton={
             <Button
+              sx={styles.buttons}
               size='small'
               onClick={handleNext}
               disabled={activeStep === maxSteps - 1}>
@@ -77,6 +71,7 @@ function PlayingTodayCarousel() {
           }
           backButton={
             <Button
+              sx={styles.buttons}
               size='small'
               onClick={handleBack}
               disabled={activeStep === 0}>

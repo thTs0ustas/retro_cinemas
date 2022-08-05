@@ -5,7 +5,8 @@ import { useState } from 'react';
 
 const usePlayingToday = () => {
   const lg = useMediaQuery('(min-width: 1200px)');
-  const md = useMediaQuery('(min-width: 900px)');
+  const md = useMediaQuery('(min-width: 600px)');
+  // const sm = useMediaQuery('(min-width: 720px)');
 
   // eslint-disable-next-line no-nested-ternary
   const cards = chunk(Array(9).fill(null), lg ? 3 : md ? 2 : 1);
