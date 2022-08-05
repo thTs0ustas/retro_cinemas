@@ -24,7 +24,7 @@ export default {
     color: '#a99664',
   },
   links: {
-    display: 'flex',
+    display: { xs: 'none', lg: 'flex' },
     gap: 2,
   },
   link: {
@@ -53,6 +53,12 @@ export default {
       width: '100%',
     },
   },
+  bdropLink: {
+    fontWeight: 800,
+    fontSize: '1.3rem',
+    mb: 2,
+  },
+
   image: {
     '&::before': {
       zIndex: 1,

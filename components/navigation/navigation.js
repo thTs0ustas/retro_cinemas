@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 // import { useState } from 'react';
 import styles from './styles';
+import { NavMenu } from './navMenu';
 
 function Navigation() {
   // const [navbarOpen, setNavbarOpen] = useState(false);
@@ -31,6 +32,7 @@ function Navigation() {
               height={40}
             />
           </IconButton>
+          <NavMenu />
           <Box sx={styles.links}>
             <Link href='/now-playing'>
               <MuiLink sx={styles.link}>Now Playing</MuiLink>
