@@ -1,0 +1,159 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model auditorium {
+  id          Int          @id @default(autoincrement())
+  cinema_id   Int?
+  hall_num    Int?
+  total_seats Int?
+  columns     Int?
+  createdAt   DateTime     @db.DateTime(0)
+  updatedAt   DateTime     @db.DateTime(0)
+  cinemas     cinemas?     @relation(fields: [cinema_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "auditorium_ibfk_1")
+  screenings  screenings[]
+  seats       seats[]
+
+  @@index([cinema_id], map: "cinema_id")
+}
+
+model cinemas {
+  id         Int          @id @default(autoincrement())
+  address    String?      @db.VarChar(255)
+  createdAt  DateTime     @db.DateTime(0)
+  updatedAt  DateTime     @db.DateTime(0)
+  auditorium auditorium[]
+}
+
+model movies {
+  id                  Int                   @id @default(autoincrement())
+  title               String?               @db.VarChar(255)
+  description         String?               @db.VarChar(255)
+  duration            Int?
+  genre               String?               @db.VarChar(255)
+  release_year        Int?
+  image               String?               @db.VarChar(255)
+  createdAt           DateTime              @db.DateTime(0)
+  updatedAt           DateTime              @db.DateTime(0)
+  movies_of_the_month movies_of_the_month[]
+  reviews             reviews[]
+}
+
+model movies_of_the_month {
+  id         Int          @id @default(autoincrement())
+  movie_id   Int?
+  createdAt  DateTime     @db.DateTime(0)
+  updatedAt  DateTime     @db.DateTime(0)
+  movies     movies?      @relation(fields: [movie_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "movies_of_the_month_ibfk_1")
+  screenings screenings[]
+
+  @@index([movie_id], map: "movie_id")
+}
+
+model reservations {
+  id            Int             @id @default(autoincrement())
+  user_id       Int?
+  screening_id  Int?
+  purchase_date DateTime?       @db.DateTime(0)
+  total_cost    Float?          @db.Float
+  createdAt     DateTime        @db.DateTime(0)
+  updatedAt     DateTime        @db.DateTime(0)
+  users         users?          @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "reservations_ibfk_1")
+  screenings    screenings?     @relation(fields: [screening_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "reservations_ibfk_2")
+  reservedseats reservedseats[]
+
+  @@index([screening_id], map: "screening_id")
+  @@index([user_id], map: "user_id")
+}
+
+model reservedseats {
+  id             Int           @id @default(autoincrement())
+  reservation_id Int?
+  screening_id   Int?
+  seats_id       Int?
+  discount_type  String?       @db.VarChar(255)
+  cost           Int?
+  createdAt      DateTime      @db.DateTime(0)
+  updatedAt      DateTime      @db.DateTime(0)
+  reservations   reservations? @relation(fields: [reservation_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "reservedseats_ibfk_1")
+  screenings     screenings?   @relation(fields: [screening_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "reservedseats_ibfk_2")
+  seats          seats?        @relation(fields: [seats_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "reservedseats_ibfk_3")
+
+  @@index([reservation_id], map: "reservation_id")
+  @@index([screening_id], map: "screening_id")
+  @@index([seats_id], map: "seats_id")
+}
+
+model reviews {
+  id        Int      @id @default(autoincrement())
+  score     Int?
+  user_id   Int
+  movie_id  Int
+  createdAt DateTime @db.DateTime(0)
+  updatedAt DateTime @db.DateTime(0)
+  users     users    @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "reviews_ibfk_1")
+  movies    movies   @relation(fields: [movie_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "reviews_ibfk_2")
+
+  @@index([movie_id], map: "movie_id")
+  @@index([user_id], map: "user_id")
+}
+
+model screenings {
+  id                  Int                  @id @default(autoincrement())
+  auditorium_id       Int?
+  movies_month_id     Int?
+  movie_starts        DateTime?            @db.DateTime(0)
+  movie_ends          DateTime?            @db.DateTime(0)
+  movie_date          DateTime?            @db.DateTime(0)
+  createdAt           DateTime             @db.DateTime(0)
+  updatedAt           DateTime             @db.DateTime(0)
+  auditorium          auditorium?          @relation(fields: [auditorium_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "screenings_ibfk_1")
+  movies_of_the_month movies_of_the_month? @relation(fields: [movies_month_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "screenings_ibfk_2")
+  reservations        reservations[]
+  reservedseats       reservedseats[]
+
+  @@index([auditorium_id], map: "auditorium_id")
+  @@index([movies_month_id], map: "movies_month_id")
+}
+
+model seats {
+  id            Int             @id @default(autoincrement())
+  auditorium_id Int?
+  row_letter    String?         @db.VarChar(255)
+  seat_num      Int?
+  cost          Int?
+  createdAt     DateTime        @db.DateTime(0)
+  updatedAt     DateTime        @db.DateTime(0)
+  auditorium    auditorium?     @relation(fields: [auditorium_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "seats_ibfk_1")
+  reservedseats reservedseats[]
+
+  @@index([auditorium_id], map: "auditorium_id")
+}
+
+model sequelizemeta {
+  name String @id @unique(map: "name") @db.VarChar(255)
+}
+
+model users {
+  id           Int            @id @default(autoincrement())
+  username     String         @db.VarChar(255)
+  password     String         @db.VarChar(255)
+  email        String         @db.VarChar(255)
+  first_name   String?        @db.VarChar(255)
+  last_name    String?        @db.VarChar(255)
+  address      String?        @db.VarChar(255)
+  postal       String?        @db.VarChar(255)
+  birth_date   DateTime?      @db.DateTime(0)
+  isAdmin      Boolean?       @default(false)
+  isMember     Int?           @default(0) @db.TinyInt
+  access_token String?        @db.VarChar(255)
+  createdAt    DateTime       @db.DateTime(0)
+  updatedAt    DateTime       @db.DateTime(0)
+  reservations reservations[]
+  reviews      reviews[]
+}

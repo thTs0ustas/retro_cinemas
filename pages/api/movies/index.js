@@ -1,10 +1,25 @@
-const db = require('../../../models');
+const { PrismaClient } = require('@prisma/client');
 
-const { Movie, User, MovieOfTheMonth, Screening } = db.sequelize.models;
+const prisma = new PrismaClient();
 
 export default async function handler(_, res) {
-  const movies = await Movie.findAll({
-    attributes: { exclude: ['createdAt', 'updatedAt'] },
+  const movies = await prisma.movies_of_the_month.findMany({
+    select: {
+      id: true,
+      createdAt: false,
+      updatedAt: false,
+      screenings: {
+        where: {
+          movie_starts: {
+            gte: new Date('05-21-2022'),
+            lt: new Date('05-22-2022'),
+          },
+        },
+        orderBy: {
+          id: 'asc',
+        },
+      },
+    },
   });
   res.json(movies);
 }
