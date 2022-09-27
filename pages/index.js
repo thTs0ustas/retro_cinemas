@@ -1,5 +1,7 @@
 import { Box } from '@mui/material';
+import axios from 'axios';
 import Head from 'next/head';
+
 import { Navigation } from '../components/navigation';
 import { PlayingTodayCarousel } from '../components/playingTodayCarousel';
 import { TopHeaderBar } from '../components/topHeaderBar';
@@ -21,4 +23,13 @@ function Home() {
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  console.log(data);
+  return {
+    props: {
+      data,
+    },
+  };
+};
 export default Home;

@@ -6,6 +6,7 @@ export default async function handler(_, res) {
   const movies = await prisma.movies_of_the_month.findMany({
     select: {
       id: true,
+      movies: true,
       createdAt: false,
       updatedAt: false,
       screenings: {
